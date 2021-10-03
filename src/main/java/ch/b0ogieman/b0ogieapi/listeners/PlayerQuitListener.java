@@ -8,11 +8,11 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import java.sql.*;
 import java.util.UUID;
 
-public class PlayQuitListener implements Listener {
+public class PlayerQuitListener implements Listener {
 
 	private B0ogieAPI b0ogieAPI;
 
-	public PlayQuitListener(B0ogieAPI b0ogieAPI) {
+	public PlayerQuitListener(B0ogieAPI b0ogieAPI) {
 		this.b0ogieAPI = b0ogieAPI;
 	}
 

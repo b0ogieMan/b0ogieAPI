@@ -8,11 +8,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import java.sql.*;
 import java.util.UUID;
 
-public class PlayJoinListener implements Listener {
+public class PlayerJoinListener implements Listener {
 
 	private B0ogieAPI b0ogieAPI;
 
-	public PlayJoinListener(B0ogieAPI b0ogieAPI) {
+	public PlayerJoinListener(B0ogieAPI b0ogieAPI) {
 		this.b0ogieAPI = b0ogieAPI;
 	}
 
