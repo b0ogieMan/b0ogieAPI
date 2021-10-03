@@ -1,0 +1,4 @@
+name: B0ogieAPI
+version: '${project.version}'
+main: ch.b0ogieman.b0ogieapi.B0ogieAPI
+api-version: 1.17
