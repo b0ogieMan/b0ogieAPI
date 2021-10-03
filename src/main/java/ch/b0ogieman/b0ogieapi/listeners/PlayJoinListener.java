@@ -21,7 +21,6 @@ public class PlayJoinListener implements Listener {
 		final UUID uuid = event.getPlayer().getUniqueId();
 		final Connection connection;
 
-
 		try {
 
 			connection = b0ogieAPI.getDatabaseManager().getConnection();
