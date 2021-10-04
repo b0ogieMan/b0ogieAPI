@@ -1,6 +1,8 @@
 package ch.b0ogieman.b0ogieapi.listeners;
 
 import ch.b0ogieman.b0ogieapi.B0ogieAPI;
+import ch.b0ogieman.b0ogieapi.B0ogiePlayer;
+import ch.b0ogieman.b0ogieapi.utils.Utils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +23,9 @@ public class PlayerChatListener implements Listener {
 		final Player player = event.getPlayer();
 		final UUID uuid = player.getUniqueId();
 
-		event.setFormat("§c[Admin] " + player.getDisplayName() + "§r > " + event.getMessage());
+		Utils utils = new Utils();
+
+		event.setFormat(utils.getRankString(b0ogieAPI.getPlayers().get(uuid).getRank()) + " " + player.getDisplayName()
+				  + "§r: " + event.getMessage());
 	}
 }

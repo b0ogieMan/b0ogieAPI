@@ -26,13 +26,16 @@ public class PlayerQuitListener implements Listener {
 			connection = b0ogieAPI.getDatabaseManager().getConnection();
 
 			final PreparedStatement preparedStatement = connection.prepareStatement(
-					  "UPDATE \"b0ogiePlayers\" SET last_connection = ? WHERE uuid=?"
+					  "UPDATE \"b0ogiePlayers\" SET last_connection = ?, \"isOnline\" = ? WHERE uuid=?"
 			);
 
 			final long time = System.currentTimeMillis();
 			preparedStatement.setTimestamp(1, new Timestamp(time));
-			preparedStatement.setString(2, uuid.toString());
+			preparedStatement.setBoolean(2, false);
+			preparedStatement.setString(3, uuid.toString());
 			preparedStatement.executeUpdate();
+
+			b0ogieAPI.getPlayers().remove(uuid);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
